@@ -1,0 +1,30 @@
+<style>
+    .dribble {
+        width:100px;
+    }
+</style>
+<h1>Welcome to my travel site</h1>
+<%-# param to drive welcome message on homepage -%>
+<p>Welcome to my homepage <%= @name %> !</p>
+
+
+    <br />
+    Homeland <%= @homeland %>
+<hr />
+    <ul>
+        <% @countries.each do |country| %>
+            <li><%= country %></li>
+        <% end %>
+    </ul>
+
+    <ul>
+    <% @flanagansmithfamily.each do |relationship, name| %>
+    <p><%= name %> is my <%= relationship %>.</p>
+<% end %>
+
+<% @images.each do |filename| %>
+    <%= image_tag "#{filename}1.jpg", alt: "Here is an image", class: "dribble" %>
+<% end %>
+
+
+<p>Go to <a href="../welcome/about" class="button">About</a> Page <p>
