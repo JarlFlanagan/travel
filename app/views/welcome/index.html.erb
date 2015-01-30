@@ -7,6 +7,9 @@
 <%-# param to drive welcome message on homepage -%>
 <p>Welcome to my homepage <%= @name %> !</p>
 
+<% if @fromabout == "about" %>
+    <p>I see you came back from the about page, what are you looking for?</p>
+<% end %>
 
     <br />
     Homeland <%= @homeland %>
@@ -28,3 +31,8 @@
 
 
 <p>Go to <a href="../welcome/about" class="button">About</a> Page <p>
+
+<hr />
+
+<p>My favorite color is <%= @color %> </p>
+<p>My shoe size is <%= @size %> </p>

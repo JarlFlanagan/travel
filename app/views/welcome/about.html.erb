@@ -14,4 +14,4 @@
 <p>My shoe size is <%= @size %> </p>
 
 <%-# link from about to home  - when clicked - homepage shows a message -%>
-<%= link_to "Home", root_url(params) %>
+<%= link_to "Home", root_path({fromabout: "about"}) %>
