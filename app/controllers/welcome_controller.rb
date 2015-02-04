@@ -1,18 +1,20 @@
 class WelcomeController < ApplicationController
     
-        before_action :set_color
 
       def index
+        @united_states = {"capital city" => "Washington, DC",
+                        "favorite city" => "Asheville, NC",
+                        "favorite state" => "Oregon",
+                        "flag colors" => ["red", "white", "blue"]
+        }
+        end
+
+
+
         @homeland = 'US'
         @countries = ["Italy", "Ireland", "Norway"]
-            @flanagansmithfamily = {
-            "Husband" => "Ryan",
-            "Father" => "Lyle",
-            "Mother" => "Dorothy",
-            "Sister" => "Haley"
-        }
-        @images = ["adventurer", "nyc", "squeeze_charleston"]
-        @name = params[:name]
+      
+        #@images = ["adventurer", "nyc", "squeeze_charleston"]
         @fromabout = params[:fromabout]
         #@color = params[:color]
         #can set param for session as well
@@ -48,14 +50,3 @@ class WelcomeController < ApplicationController
             end
     end
 
-    def set_shoesize
-
-        @size = param[:size]
-            if @size
-                session[:size] = @size
-            else
-                @size = session[:color]
-            end
-    end
-
-end

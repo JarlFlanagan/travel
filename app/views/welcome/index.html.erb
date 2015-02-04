@@ -20,11 +20,6 @@
         <% end %>
     </ul>
 
-    <ul>
-    <% @flanagansmithfamily.each do |relationship, name| %>
-    <p><%= name %> is my <%= relationship %>.</p>
-<% end %>
-
 <% @images.each do |filename| %>
     <%= image_tag "#{filename}1.jpg", alt: "Here is an image", class: "dribble" %>
 <% end %>
@@ -34,5 +29,19 @@
 
 <hr />
 
-<p>My favorite color is <%= @color %> </p>
-<p>My shoe size is <%= @size %> </p>
+<table class="table">
+    <tr>
+        <% @united_states.each do |key,value| %>
+            <th><%= key.titleize %></th>
+        <% end %>
+    </tr>
+    <tr>
+        <% @united_states.each do |key,value| %>
+            <% if value.kind_of?(Array) %>
+                <td><%= value.join(", ") %></td>
+            <% else %>
+                <td><%= value %></td>
+            <% end %>
+        <% end %>
+    </tr>
+</table>

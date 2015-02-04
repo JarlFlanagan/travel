@@ -1,0 +1,23 @@
+<% if notice != nil %>
+  <p id="notice" class="alert alert-success" role="alert">
+    <%= notice %>
+  </p>
+<% end %>
+
+<p>
+  <strong>City:</strong>
+  <%= @destination.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @destination.country %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @destination.description %>
+</p>
+
+<%= link_to 'Edit', edit_destination_path(@destination), class: "btn btn-default" %> |
+<%= link_to 'Back', destinations_path, class: "btn btn-default" %>
